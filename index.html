@@ -13,12 +13,14 @@
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <!-- Fonte del Proyecto Raleway -->
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet" />
-  <title>Mi Portafolio</title>
+  <script src="https://kit.fontawesome.com/107ea13423.js" crossorigin="anonymous"></script>
+  <title>Yansel Martínez – Portafolio</title>
 </head>
 
 <body>
   <!-- Ir arriba-->
   <div class="go-to-top icon-arrow-up2"></div>
+  <canvas id="canvas"></canvas>
 
   <!-- Sección del Menú  -->
   <header class="menu">
@@ -51,26 +53,27 @@
     <div class="title__div">
       <div class="title__container">
         <h2 class="title__bio">
-          Hola, mi nombre es Yansel Martínez y construyo paginas web
+          Hola, soy Yansel Martínez, desarrollador de software enfocado en crear soluciones web funcionales y
+          atractivas.
         </h2>
         <h3 class="title__subsection">
-          Soy estudiante de termino en la carrera
-          <strong>tecnólogo en desarrollo de software</strong> en el ITLA y
-          Ex-alumno del programa ONE Oracle Nex Education.
+          Me
+          apasiona aprender, innovar y construir proyectos que generen impacto real.
         </h3>
         <ul class="title__network">
           <!-- Pon los enlaces de tus redes sociales favoritas -->
           <li class="title__network__item">
-            <a href="https://github.com/Yansel17">Github <img src="assets/img/github__icon.png" /></a>
+            <a href="https://github.com/Yansel17">Github <i class=" fa-brands fa-github"></i></a>
           </li>
           <li class="title__network__item">
-            <a href="https://www.linkedin.com/in/yansel17/">Linkedin <img src="assets/img/linkedin.png" /></a>
+            <a href="https://www.linkedin.com/in/yansel17/">Linkedin <i class="fa-brands fa-linkedin-in"></i></a>
           </li>
           <li class="title__network__item">
-            <a href="https://www.instagram.com/jensy_gif/">Instagram <img src="assets/img/instagram.png" /></a>
+            <a href="https://www.instagram.com/jensy_gif/">Instagram <i
+                class="fa-brands fa-square-instagram"></i></i></a>
           </li>
           <li class="title__network__item">
-            <a href="assets/pdf/Cv - Yansel Martínez.pdf">Currículum <img src="assets/img/curriculum-vitae.png" /></a>
+            <a href="assets/pdf/Cv - Yansel Martínez.pdf">Currículum <i class="fa-regular fa-file"></i></a>
           </li>
         </ul>
       </div>
@@ -85,16 +88,16 @@
     <div class="about__container">
       <h3 class="about__title">Sobre mi</h3>
       <p class="about__paragraph">
-        Soy tecnólogo en desarrollo web - (Front-End), siento un gran interés
-        por la tecnólogia y todo lo que viene de ella, soy alguien proactivo
-        que siempre busca fortalecer sus habilidades blandas y aprender nuevas
-        tecnologias por superación propia.
+        Más allá de líneas de código, disfruto resolver problemas y crear experiencias digitales que realmente
+        funcionen. Me
+        gusta trabajar en equipo, escuchar ideas y convertirlas en soluciones claras, ya sea desarrollando una web para
+        un
+        cliente o colaborando en un proyecto más grande.
       </p>
       <p class="about__paragraph">
-        Tengo la capacidad de aprender rápido y adaptarme a cualquier ambiente
-        para poder trabajar tanto solo, como en equipo. Para mí es muy importante la
-        comunicación y colaboración del equipo, ya que así se llega a tener
-        exitos en proyectos.
+        Si eres una empresa en busca de un desarrollador comprometido, o un emprendedor que quiere llevar su idea a lo
+        digital,
+        estoy aquí para ayudarte a hacerlo realidad.
       </p>
     </div>
     <div class="title__logo-img">
@@ -242,10 +245,12 @@
             <img src="assets/img/ITLA-Logotipo.jpg" />
           </li>
           <li class="academic__courses__item__title">
-            <h4>Desarrollo de software</h4>
+            <h4>Tecnólogo en Desarrollo de Software
+            </h4>
           </li>
           <li class="academic__courses__item__subtitle">
-            <p>En curso - ITLA</p>
+            <p>Instituto Tecnológico de Las Américas (ITLA)</p>
+            <p><i class="fa-solid fa-calendar-days"></i> 2021 - 2024</p>
           </li>
         </ul>
       </div>
@@ -256,10 +261,12 @@
             <img src="assets/img/alura_logo.png" />
           </li>
           <li class="academic__courses__item__title">
-            <h4>Desarrollador Frond-End junior</h4>
+            <h4>Formación en Desarrollo Front-End</h4>
           </li>
           <li class="academic__courses__item__subtitle">
-            <p>En curso - Alura</p>
+            <p>Alura Latam</p>
+            <p><i class="fa-solid fa-calendar-days"></i> 2023</p>
+
           </li>
         </ul>
       </div>
@@ -275,13 +282,21 @@
       <img class="experience__img" src="assets/img/img__encriptador.jpeg" alt="img__p-encriptador" />
       <div class="experience__info-container">
         <h2 class="experience__title">Encriptador de texto</h2>
-        <h3 class="experience__text">Challenge Oracle</h3>
+        <h3 class="experience__text">Convierte tus mensajes en un código secreto que solo tú y tus amigos podrán
+          entender. Escribe cualquier texto y
+          encríptalo fácilmente para compartirlo de forma divertida y segura.
+        </h3>
+        <h3 class="description__text">Tecnologías: <p style="font-weight: 100;"> HTML <i
+              class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i>, JavaScript <i
+              class="fa-brands fa-square-js"></i></p>
+        </h3>
         <div class="experience__description">
+
           <!-- Pon el enlace del proyecto en Github o GithubPages -->
           <span class="experience__repo"><a href="https://github.com/Yansel17/EncriptadorTexto"><button
-                class="experience__boton--repo">Repositório</button></a></span>
+                class="experience__boton--repo">Repositório <i class="fa-brands fa-github"></i></button></a></span>
           <span class="experience__demo"><a href="https://yansel17.github.io/EncriptadorTexto/"><button
-                class="experience__boton--demo">Ver demo</button></a></span>
+                class="experience__boton--demo">Ver demo <i class="fa-solid fa-laptop-code"></i></button></a></span>
         </div>
       </div>
     </div>
@@ -290,13 +305,21 @@
       <img class="experience__img" src="assets/img/img__itinerarios.jpeg" alt="img__p-itinerario" />
       <div class="experience__info-container">
         <h2 class="experience__title">Itinerario de tareas</h2>
-        <h3 class="experience__text">Personal proyect</h3>
+        <h3 class="experience__text">Herramienta personal para planificar y organizar mis proyectos de desarrollo. Me
+          permite definir las tareas clave,
+          priorizarlas y hacer seguimiento del progreso, asegurando una ejecución más ordenada y eficiente desde la
+          etapa inicial.
+        </h3>
+        <h3 class="description__text">Tecnologías: <p style="font-weight: 100;"> HTML <i
+              class="fa-brands fa-html5"></i>, CSS <i class="fa-brands fa-css3-alt"></i>, JavaScript <i
+              class="fa-brands fa-square-js"></i></p>
+        </h3>
         <div class="experience__description">
           <!-- Pon el enlace del proyecto en Github o GithubPages -->
           <span class="experience__repo"><a href="https://github.com/Yansel17/Itinerario-de-tareas"><button
-                class="experience__boton--repo">Repositório</button></a></span>
+                class="experience__boton--repo">Repositório <i class="fa-brands fa-github"></i></button></a></span>
           <span class="experience__demo"><a href="https://yansel17.github.io/Itinerario-de-tareas/"><button
-                class="experience__boton--demo">Ver demo</button></a></span>
+                class="experience__boton--demo">Ver demo <i class="fa-solid fa-laptop-code"></i></button></a></span>
         </div>
       </div>
     </div>
@@ -308,7 +331,14 @@
         <img class="formcontacto__img" src="assets/img/contacto__img.jpg" alt="img__contacto" />
       </div>
       <div class="formcontacto__text">
-        <h2 class="formcontacto__title">Contacto</h2>
+        <span class="container-formcontacto__text__icon">
+          <h2 class="formcontacto__title">Contacto</h2>
+          <div class="container-formcontacto-icons">
+            <i class="fa-brands fa-square-github"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+          </div>
+        </span>
         <h3 class="formcontacto__subtext">¿Quieres contactarme?</h3>
         <h3 class="formcontacto__subtext">
           Complete el siguiente formulario y me pondré en contacto con usted
@@ -331,11 +361,17 @@
 
   <!-- Sección de Footer -->
   <footer class="footer">
-    <div class="footer__rodape">
-      <p>Desarrollado por Yansel Martinez</p>
-      <p>2023</p>
+    <p>&copy; 2024 Yansel Martínez. Todos los derechos reservados.</p>
+    <div style="margin-top: 10px;">
+      <a href="https://github.com/yansel17" target="_blank" style="color: #fff; margin: 0 10px;"><i
+          class="fa-brands fa-github"></i> GitHub</a>
+      <a href="mailto:yanselj6@gmail.com" style="color: #fff; margin: 0 10px;"><i
+          class="fa-solid fa-envelope-open-text"></i> Correo</a>
+      <a href="https://www.linkedin.com/in/yansel17/" target="_blank" style="color: #fff; margin: 0 10px;"><i
+          class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
   </footer>
+
 
   <!-- Script del documento JavaScript -->
   <script src="assets/js/validacion.js"></script>

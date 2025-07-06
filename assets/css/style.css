@@ -13,12 +13,21 @@ coloque nas sessões indicadas*/
   --cor-de-boton: #2a7ae4;
   --cor-fondo-secundario: #d9eae8;
   --cor-letra-secundaria: #464646;
+  --font-family: "Poppins", sans-serif;
+}
+body {
+  background: #060e1b;
+  overflow: hidden;
+}
+
+#canvas {
+  //opacity: 0.5;
 }
 
 body {
   box-sizing: border-box;
   background-color: var(--cor-de-fondo);
-  font-family: "Raleway";
+  font-family: var(--font-family);
   margin: 0;
 }
 
@@ -96,6 +105,18 @@ https://en.bem.info/methodology/quick-start/*/
   display: none;
 }
 
+ul>li>a {
+  color: var(--cor-de-link);
+  /* font-size: 15px; */
+  font-weight: 500;
+  text-align: center;
+}
+
+ul>li>a>.fa-brands,
+.fa-regular {
+  font-size: 20px;
+}
+
 .menu__list__item,
 .menu__list__item-contacto {
   margin-right: 2rem;
@@ -112,10 +133,6 @@ https://en.bem.info/methodology/quick-start/*/
 
 #inicio {
   scroll-margin-top: 12ex;
-}
-
-.title__network__item-c {
-  font-weight: 700;
 }
 
 /*Ir arriba*/
@@ -166,16 +183,34 @@ https://en.bem.info/methodology/quick-start/*/
 
 .title__network {
   display: flex;
-  margin-top: 3rem;
-  padding-left: 0;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0;
 }
 
 .title__network__item {
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   background-color: var(--cor-fondo-secundario);
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+}
 
-  padding: 5px;
-  border-radius: 20%;
+.title__network__item:hover {
+  background: #111;
+    border-color: #ccc ;
+    transform: scale(1.05);
+}
+.title__network__item:hover a{
+  color: #fff !important;
 }
 
 /*Sección About*/
@@ -288,7 +323,7 @@ https://en.bem.info/methodology/quick-start/*/
 
 .hobbies__name,
 .skills__name {
-  font-family: "Raleway";
+  font-family: var(--font-family);
   margin-top: 20px;
   color: --cor-letra-secundaria;
 }
@@ -321,7 +356,7 @@ https://en.bem.info/methodology/quick-start/*/
   display: flex;
   justify-content: center;
   justify-content: space-between;
-  margin: 0 4rem 4rem;
+  align-items: center;
 }
 
 .experience__box__itinerario {
@@ -330,6 +365,7 @@ https://en.bem.info/methodology/quick-start/*/
 
 .experience__img {
   width: 60%;
+  height: max-content;
   margin: 2rem;
   border-radius: 10px;
 }
@@ -342,6 +378,13 @@ https://en.bem.info/methodology/quick-start/*/
 
 .experience__title {
   font-size: 30px;
+}
+
+.experience__text {
+  font-size: 16px;
+  color: var(--cor-letra-secundaria);
+  margin: 10px 0;
+  text-align: justify;
 }
 
 .experience__text,
@@ -365,7 +408,7 @@ https://en.bem.info/methodology/quick-start/*/
   width: 100%;
   border: 1;
   border-radius: 8px;
-  font-family: "Raleway";
+  font-family: var(--font-family);
 }
 
 .experience__boton--demo {
@@ -407,7 +450,7 @@ https://en.bem.info/methodology/quick-start/*/
   flex-direction: column;
   justify-content: center;
   margin-left: 45px;
-  width: 25rem;
+  width: 34%;
 }
 
 .formcontacto__text {
@@ -415,7 +458,15 @@ https://en.bem.info/methodology/quick-start/*/
   margin: 10px;
   padding-right: 40px;
   line-height: 0.5;
-  font-family: "Raleway";
+  font-family: var(--font-family);
+}
+
+.container-formcontacto-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: xx-large;
 }
 
 .formcontacto__subtext,
@@ -466,6 +517,10 @@ https://en.bem.info/methodology/quick-start/*/
 
 .footer {
   text-align: center;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Vamos a desafiarnos trabajando con responsividad?
@@ -477,7 +532,7 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 /*Tablet y mobile*/
 @media (max-width: 768px) {
-  
+
   /*Mobile*/
   /* @media (max-width: 425px) { */
 
@@ -485,7 +540,7 @@ Utiliza las referencias de los breakpoints @media abajo */
   .go-to-top {
     display: none !important;
   }
-  
+
   .title__network__item__contacto {
     display: inline;
   }
@@ -543,11 +598,10 @@ Utiliza las referencias de los breakpoints @media abajo */
     font-size: 14px;
   }
 
-  .title__network__item {
+  /* .title__network__item {
     padding: 2px;
     font-size: 14px;
-    margin-right: 10px;
-  }
+  } */
 
   /*Sección sobre mi*/
 
@@ -642,14 +696,20 @@ Utiliza las referencias de los breakpoints @media abajo */
 
   .experience__info-container {
     margin: 10px 10px 20px;
+    padding: 15px;
     border-radius: 5px;
-    width: 18rem;
+    width: 23rem;
     background-color: var(--cor-fondo-secundario);
     box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
   }
 
-  .experience__boton--demo {
-    width: max-content;
+  .experience__boton--demo,
+  .experience__boton--repo {
+    /* width: max-content; */
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    gap: 3px;
   }
 
   .experience__img {
@@ -665,7 +725,7 @@ Utiliza las referencias de los breakpoints @media abajo */
 
   .formcontacto__text {
     text-align: center;
-    width: 100%;
+    width: 90%;
     padding: 0;
     color: var(--cor-letra-secundaria);
   }
