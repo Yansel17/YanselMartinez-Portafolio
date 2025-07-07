@@ -7,6 +7,7 @@ coloque nas sessões indicadas*/
 :root {
   /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
   /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
+  /* --cor-de-fondo: #060e1b; */
   --cor-de-fondo: #f5f5f5;
   --cor-de-link: #000;
   --cor-de-letras: #252525;
@@ -15,18 +16,20 @@ coloque nas sessões indicadas*/
   --cor-letra-secundaria: #464646;
   --font-family: "Poppins", sans-serif;
 }
-body {
-  background: #060e1b;
-  overflow: hidden;
-}
 
-#canvas {
-  //opacity: 0.5;
+canvas {
+  /* opacity: 0.5; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+  width: 100%;
 }
 
 body {
   box-sizing: border-box;
-  background-color: var(--cor-de-fondo);
+  background: var(--cor-de-fondo);
   font-family: var(--font-family);
   margin: 0;
 }
@@ -62,6 +65,126 @@ con una interfaz de usuario compleja, y permite la reutilización del código ex
 Enlace de la documentación oficial!
 https://en.bem.info/methodology/quick-start/*/
 
+
+/*Sección Header*/
+nav {
+
+
+  @supports (corner-shape: squircle) {
+    border-radius: 24px;
+    border-shape: squircle;
+  }
+
+  ul:has(:not(:hover)) {
+    anchor-name: --test;
+  }
+
+
+  &::after {
+    backdrop-filter: blur(2px);
+    /* background-color: hsl(200 100% 100% / 0.1); */
+    background-color: var(--cor-de-boton);
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  &>ul {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -3;
+      /* inset: -8px; */
+      border-radius: 8px;
+
+      @supports (corner-shape: squircle) {
+        border-radius: 24px;
+        border-shape: squircle;
+      }
+
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    border-radius: 8px;
+
+    position-anchor: --test;
+    position: absolute;
+    /* top: calc(anchor(bottom) - 4px); */
+    left: calc(anchor(left) + 1rem);
+    right: calc(anchor(right) + 1rem);
+    bottom: anchor(bottom);
+    transition: 700ms;
+    transition-timing-function: linear(0,
+        0.008 1.1%,
+        0.031 2.2%,
+        0.129 4.8%,
+        0.257 7.2%,
+        0.671 14.2%,
+        0.789 16.5%,
+        0.881 18.6%,
+        0.957 20.7%,
+        1.019 22.9%,
+        1.063 25.1%,
+        1.094 27.4%,
+        1.114 30.7%,
+        1.112 34.5%,
+        1.018 49.9%,
+        0.99 59.1%,
+        1);
+  }
+
+  &:has(a:hover)::before,
+  &:has(a:hover)::after {
+    @supports (corner-shape: squircle) {
+      corner-shape: squircle;
+      border-radius: 50%;
+    }
+
+    top: anchor(top);
+    left: anchor(left);
+    right: anchor(right);
+  }
+
+  &:has(li:first-of-type a:hover)::before,
+  &:has(li:first-of-type a:hover)::after {
+    @supports (corner-shape: squircle) {
+      border-radius: 32px 50% 50% 32px;
+    }
+  }
+
+  &:has(li:last-of-type a:hover)::before,
+  &:has(li:last-of-type a:hover)::after {
+    @supports (corner-shape: squircle) {
+      border-radius: 50% 32px 32px 50%;
+    }
+  }
+
+  >ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      position: relative;
+      display: block;
+      anchor-name: --test;
+    }
+  }
+}
+
 /*Sección Menu*/
 
 .menu {
@@ -77,7 +200,7 @@ https://en.bem.info/methodology/quick-start/*/
 .menu__header {
   display: flex;
   text-align: center;
-  max-width: 200px;
+  /* max-width: 200px; */
 }
 
 .inicio {
@@ -110,6 +233,7 @@ ul>li>a {
   /* font-size: 15px; */
   font-weight: 500;
   text-align: center;
+  width: max-content;
 }
 
 ul>li>a>.fa-brands,
@@ -117,10 +241,6 @@ ul>li>a>.fa-brands,
   font-size: 20px;
 }
 
-.menu__list__item,
-.menu__list__item-contacto {
-  margin-right: 2rem;
-}
 
 #sobre-mi,
 #skills,
@@ -168,15 +288,18 @@ ul>li>a>.fa-brands,
   display: flex;
   margin: 6rem;
   justify-content: space-evenly;
+  border-radius: 10px;
 }
 
 .title__bio {
   font-size: 47px;
-  color: var(--cor-de-letras);
+  color: white;
+  /* color: var(--cor-de-letras); */
 }
 
 .title__subsection {
-  color: var(--cor-de-letras);
+  color: white;
+  /* color: var(--cor-de-letras); */
   font-size: 20px;
   font-weight: 100;
 }
@@ -206,10 +329,11 @@ ul>li>a>.fa-brands,
 
 .title__network__item:hover {
   background: #111;
-    border-color: #ccc ;
-    transform: scale(1.05);
+  border-color: #ccc;
+  transform: scale(1.05);
 }
-.title__network__item:hover a{
+
+.title__network__item:hover a {
   color: #fff !important;
 }
 
@@ -319,16 +443,35 @@ ul>li>a>.fa-brands,
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
   width: 13rem;
   margin: 25px;
+  transition: all 0.3s ease;
+}
+
+.hobbies__box:hover,
+.skills__box:hover {
+  transform: translateY(-9px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .hobbies__name,
 .skills__name {
   font-family: var(--font-family);
   margin-top: 20px;
-  color: --cor-letra-secundaria;
+  color: var(--cor-letra-secundaria);
+}
+
+.skill-img,
+.hobbie-img {
+  width: 128px;
 }
 
 /* Experiencia Académica*/
+
+.academic__courses__item__subtitle p {
+  margin: 5px 0;
+  color: #555;
+  text-align: justify;
+}
 
 .academic {
   margin: 4rem 0;
@@ -347,6 +490,13 @@ ul>li>a>.fa-brands,
   padding: 10px;
   background-color: var(--cor-fondo-secundario);
   box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.academic__courses__box:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* experiencia*/
@@ -409,6 +559,7 @@ ul>li>a>.fa-brands,
   border: 1;
   border-radius: 8px;
   font-family: var(--font-family);
+  transition: all 0.3s ease;
 }
 
 .experience__boton--demo {
@@ -421,6 +572,20 @@ ul>li>a>.fa-brands,
   color: var(--cor-de-boton);
   border: 1;
   border-color: var(--cor-de-boton);
+}
+
+.experience__boton--demo:hover {
+  color: var(--cor-de-boton);
+  border-color: white;
+  background-color: #f0f0f0;
+  border: 1;
+  border-color: var(--cor-de-boton);
+}
+
+.experience__boton--repo:hover {
+  color: white;
+  border-color: var(--cor-de-boton);
+  background-color: var(--cor-de-boton);
 }
 
 .experience__repo,
@@ -506,11 +671,23 @@ ul>li>a>.fa-brands,
 
 .formcontacto__boton {
   width: 50%;
-  margin-left: 25%;
   background-color: var(--cor-de-boton);
   border: none;
   color: white;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formcontacto__boton:hover {
+
+  color: var(--cor-de-boton);
+  font-weight: bold;
+  border-color: white;
+  background-color: #f0f0f0;
+
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /*footeer*/
@@ -528,6 +705,15 @@ Utiliza las referencias de los breakpoints @media abajo */
 * {
   /* outline: 1px solid red; */
   box-sizing: border-box;
+}
+
+/*Footer*/
+footer {
+  background-color: var(--cor-de-fondo);
+  color: #333;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
 }
 
 /*Tablet y mobile*/
@@ -549,6 +735,15 @@ Utiliza las referencias de los breakpoints @media abajo */
 
   .menu__title {
     font-size: 16px;
+  }
+
+  .title__bio {
+    font-size: 47px;
+  }
+
+  .title__subsection {
+    font-size: 20px;
+    font-weight: 100;
   }
 
   .menu {
@@ -574,7 +769,6 @@ Utiliza las referencias de los breakpoints @media abajo */
     padding-top: 25px;
     align-items: center;
     text-align: center;
-    background-color: floralwhite;
   }
 
   .title__profile {
@@ -592,6 +786,7 @@ Utiliza las referencias de los breakpoints @media abajo */
   .title__bio {
     font-size: 22px;
     margin: 0;
+    text-align: justify;
   }
 
   .title__subsection {
@@ -612,18 +807,21 @@ Utiliza las referencias de los breakpoints @media abajo */
   .experience__section__title,
   .formcontacto__title {
     margin-top: 1rem;
-    font-size: 22px;
+    font-size: 30px;
     color: var(--cor-de-letras);
+    font-weight: 700;
   }
 
   .about {
     margin-top: 2px;
     padding: 0;
+    border-radius: 10px;
   }
 
   .about__container {
     margin: 10px;
     padding: 0;
+    text-align: justify;
   }
 
   .ym_logo {
@@ -643,11 +841,6 @@ Utiliza las referencias de los breakpoints @media abajo */
   .hobbies__box {
     border-radius: 10px 0;
     flex: content;
-  }
-
-  .skill-img,
-  .hobbie-img {
-    width: 100%;
   }
 
   /*Hobbies*/
@@ -746,14 +939,10 @@ Utiliza las referencias de los breakpoints @media abajo */
   }
 
   .formcontacto__boton {
-    width: 50%;
-    margin: 2% 25%;
+    /* width: 50%; */
+    margin: 2%;
   }
 
-  /*Footer*/
-  footer {
-    background-color: var(--cor-de-fondo);
-  }
 
   .go-to-top {
     right: 0;

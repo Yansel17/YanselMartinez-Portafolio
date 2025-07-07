@@ -1,23 +1,3 @@
-//Ir arriba
-$(document).ready(function () {
-  $(".go-to-top").click(function () {
-    $("body, html").animate(
-      {
-        scrollTop: "0px",
-      },
-      300
-    );
-  });
-
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 0) {
-      $(".go-to-top").slideDown(300);
-    } else {
-      $(".go-to-top").slideUp(300);
-    }
-  });
-});
-
 //Validación en javascript acá
 
 // const form = document.getElementById("frm");
@@ -40,7 +20,7 @@ $(document).ready(function () {
 //     alert("El asunto no puede ir vacio.");
 //   } else if (form.comments.value.trim() == "") {
 //     alert("El mensaje no puede ir vacio.");
-//   } 
+//   }
 //   else {
 //     const enviar = new FormData(this);
 //     email.setAttribute("href=");
